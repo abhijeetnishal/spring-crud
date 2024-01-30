@@ -1,9 +1,10 @@
 package com.gamehok.crud.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.gamehok.crud.entities.User;
 
-public interface userRepository extends JpaRepository<User, Long> {
+@Repository
+public interface userRepository extends CrudRepository<User, Long> {
 }
-
