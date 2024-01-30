@@ -24,7 +24,7 @@ public class userController {
 
     @PostMapping
     public User createUser(@RequestBody User user) {
-        return user;
+        return userRepository.save(user);
     }
 
     @GetMapping
