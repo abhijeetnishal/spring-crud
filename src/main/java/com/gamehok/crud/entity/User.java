@@ -1,4 +1,4 @@
-package com.gamehok.crud.entities;
+package com.gamehok.crud.entity;
 
 import java.io.Serializable;
 
