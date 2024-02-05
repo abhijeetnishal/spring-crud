@@ -1,4 +1,4 @@
-package com.gamehok.crud.entity;
+package com.gamehok.crud.entities;
 
 import java.io.Serializable;
 
@@ -21,9 +21,9 @@ public class User implements Serializable {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    public User(){}
+    private User(){}
 
-    public User(Long id, String name, String email) { 
+    private User(Long id, String name, String email) { 
         this.id = id;
         this.name = name; 
         this.email = email;

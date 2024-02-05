@@ -1,4 +1,4 @@
-package com.gamehok.crud.controller;
+package com.gamehok.crud.controllers;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gamehok.crud.entity.User;
-import com.gamehok.crud.service.UserService;
+import com.gamehok.crud.entities.User;
+import com.gamehok.crud.services.UserService;
 
 @RestController
 @RequestMapping("api/users")
@@ -42,8 +42,7 @@ public class UserController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") Long userId,
-            @RequestBody User user) {
+    public ResponseEntity<User> updateUser(@PathVariable("id") Long userId, @RequestBody User user) {
         user.setId(userId);
         User updatedUser = userService.updateUser(user);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);

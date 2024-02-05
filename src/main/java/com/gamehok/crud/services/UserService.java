@@ -1,8 +1,8 @@
-package com.gamehok.crud.service;
+package com.gamehok.crud.services;
 
 import java.util.List;
 
-import com.gamehok.crud.entity.User;
+import com.gamehok.crud.entities.User;
 
 public interface UserService {
     User createUser(User user);
