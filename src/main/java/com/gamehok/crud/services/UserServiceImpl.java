@@ -2,6 +2,7 @@ package com.gamehok.crud.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(Long userId) {
+    public User getUserById(UUID userId) {
         Optional<User> optionalUser = userRepository.findById(userId);
         return optionalUser.get();
     }
@@ -40,7 +41,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(Long userId) {
+    public void deleteUser(UUID userId) {
         userRepository.deleteById(userId);
     }
 }

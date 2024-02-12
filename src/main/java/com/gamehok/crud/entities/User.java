@@ -1,6 +1,7 @@
 package com.gamehok.crud.entities;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,8 +13,9 @@ import jakarta.persistence.Id;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -23,17 +25,17 @@ public class User implements Serializable {
 
     private User(){}
 
-    private User(Long id, String name, String email) { 
+    private User(UUID id, String name, String email) { 
         this.id = id;
         this.name = name; 
         this.email = email;
     }
 
-    public Long getId(){
+    public UUID getId(){
         return id;
     }
 
-    public void setId(Long id){
+    public void setId(UUID id){
         this.id = id;
     }
 

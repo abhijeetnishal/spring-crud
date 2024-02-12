@@ -1,6 +1,7 @@
 package com.gamehok.crud.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Long userId) {
+    public ResponseEntity<User> getUserById(@PathVariable("id") UUID userId) {
         try {
             User user = userService.getUserById(userId);
             return new ResponseEntity<>(user, HttpStatus.OK);
@@ -54,7 +55,7 @@ public class UserController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<String> updateUser(@PathVariable("id") Long userId, @RequestBody User user) {
+    public ResponseEntity<String> updateUser(@PathVariable("id") UUID userId, @RequestBody User user) {
         try {
             user.setId(userId);
             User updatedUser = userService.updateUser(user);
@@ -65,7 +66,7 @@ public class UserController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable("id") Long userId) {
+    public ResponseEntity<String> deleteUser(@PathVariable("id") UUID userId) {
         try {
             userService.deleteUser(userId);
             return new ResponseEntity<>("User successfully deleted!", HttpStatus.OK);
