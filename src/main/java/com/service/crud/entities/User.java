@@ -1,4 +1,4 @@
-package com.gamehok.crud.entities;
+package com.service.crud.entities;
 
 import java.io.Serializable;
 import java.util.UUID;

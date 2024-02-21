@@ -1,4 +1,4 @@
-package com.gamehok.crud.services;
+package com.service.crud.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gamehok.crud.entities.User;
-import com.gamehok.crud.repositories.UserRepository;
+import com.service.crud.entities.User;
+import com.service.crud.repositories.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {

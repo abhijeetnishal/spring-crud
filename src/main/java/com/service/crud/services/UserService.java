@@ -1,9 +1,9 @@
-package com.gamehok.crud.services;
+package com.service.crud.services;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.gamehok.crud.entities.User;
+import com.service.crud.entities.User;
 
 public interface UserService {
     User createUser(User user);
